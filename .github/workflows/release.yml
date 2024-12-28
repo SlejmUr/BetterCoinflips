@@ -45,7 +45,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Agents
-        path: ${{ github.workspace }}${{ env.PROJECT_NAME }}/bin/Release/${{ env.NET_FRAMEWORK_VERSION }}/${{ env.ASSEMBLY_NAME }}.dll
+        path: ${{ github.workspace }}${{ env.PROJECT_NAME }}/bin/Release/${{ env.NET_FRAMEWORK_VERSION }}/${{ env.ASSEMBLY_NAME }}
     - name: Create Tag
       id: tag_version
       uses: mathieudutour/github-tag-action@v6.1
@@ -57,6 +57,6 @@ jobs:
       uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844
       with:
         files: |
-          ${{ github.workspace }}${{ env.PROJECT_NAME }}/bin/Release/${{ env.NET_FRAMEWORK_VERSION }}/${{ env.ASSEMBLY_NAME }}.dll
+          ${{ github.workspace }}${{ env.PROJECT_NAME }}/bin/Release/${{ env.NET_FRAMEWORK_VERSION }}/${{ env.ASSEMBLY_NAME }}
           ${{ github.workspace }}/releaseInfo.json
         tag_name: ${{ env.version }}
