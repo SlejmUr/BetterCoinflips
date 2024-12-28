@@ -97,7 +97,7 @@ namespace BetterCoinflips.Types
             new CoinFlipEffect(Translations.OneAmmoLogicerMessage, player =>
             {
                 Firearm gun = (Firearm)Item.Create(ItemType.GunLogicer);
-                gun.Ammo = 1;
+                gun.MagazineAmmo = 1;
                 gun.CreatePickup(player.Position);
             }),
 
@@ -120,7 +120,7 @@ namespace BetterCoinflips.Types
             {
                 Firearm revo = (Firearm)Item.Create(ItemType.GunRevolver);
                 revo.AddAttachment(new[]
-                    {AttachmentName.CylinderMag8, AttachmentName.ShortBarrel, AttachmentName.ScopeSight});
+                    {AttachmentName.CylinderMag6, AttachmentName.ShortBarrel, AttachmentName.ScopeSight});
                 revo.CreatePickup(player.Position);
             }),
 
@@ -136,7 +136,7 @@ namespace BetterCoinflips.Types
             // 12: Forces a respawn wave of the team that has more ticketes
             new CoinFlipEffect(Translations.ForceRespawnMessage, player =>
             {
-                Respawn.ForceWave(Respawn.NextKnownTeam == SpawnableTeamType.NineTailedFox ? SpawnableTeamType.NineTailedFox : SpawnableTeamType.ChaosInsurgency, true);
+                Respawn.ForceWave(Respawn.NextKnownSpawnableFaction.GetFaction(), true);
             }),
 
             // 13: Changes the player's size

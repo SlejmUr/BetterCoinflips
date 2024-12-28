@@ -162,7 +162,8 @@ namespace BetterCoinflips.Configs
         public HashSet<RoomType> RoomsToTeleport { get; set; } = new()
         {
             RoomType.EzCafeteria,
-            RoomType.EzCheckpointHallway,
+            RoomType.EzCheckpointHallwayA,
+            RoomType.EzCheckpointHallwayB,
             RoomType.EzCollapsedTunnel,
             RoomType.EzConference,
             RoomType.EzCrossing,
@@ -189,10 +190,7 @@ namespace BetterCoinflips.Configs
             RoomType.HczEzCheckpointA,
             RoomType.HczEzCheckpointB,
             RoomType.HczHid,
-            RoomType.HczNuke,
-            RoomType.HczServers,
             RoomType.HczStraight,
-            RoomType.HczTCross,
             RoomType.HczTesla,
             RoomType.HczTestRoom,
             RoomType.Lcz173,
